@@ -78,5 +78,5 @@ jobs:
         if: ${{ !inputs.dry-run}}
 
       # Upload to NuGet
-      - run: dotnet nuget push "${{ inputs.nuget-path }}" --skip-duplicate -s https://www.nuget.org/api/v3/package -k "${{ secrets.NUGET_KEY }}"
+      - run: dotnet nuget push "${{ inputs.nuget-path }}" --skip-duplicate -s https://www.nuget.org/api/v2/package -k "${{ secrets.NUGET_KEY }}"
         if: ${{ !inputs.dry-run && inputs.nuget-push }}
